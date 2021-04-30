@@ -57,6 +57,15 @@ function update (event){
 // Função para iniciar o jogo
 function iniciarJogo() {
 
+    // Verifica se as posições estão se encontrando. *i* é o corpo da cobrinha
+    // Caso se encontrem, será exibido um alerta informando que perdeu
+    for(i = 1; i < snake.length; i++) {
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+            clearInterval(jogo); // Para a função jogo
+            alert('GAME OVER! You Loose');
+        }
+    }
+
     // Regra para a cobrinha não passar da tela do cenário infinitamente
     // Faz com que a cobrinha não suma e volte para o ponto inicial
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
@@ -77,8 +86,16 @@ function iniciarJogo() {
     if(direction == "up") snakeY -= box;
     if(direction == "down") snakeY += box;
 
-    // Retira o último elemento (quadrado) da cobrinha
-    snake.pop();
+  
+    // Caso as posições da cobrinha e maçã sejam diferentes, retira o último quadrado 
+    // Se não, a cobrinha aumenta e a maçã surge novamente randomicamente
+    if(snakeX != food.x || snakeY != food.y) {
+        // Retira o último elemento (quadrado) da cobrinha
+        snake.pop();
+    } else {
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
+    }
 
     let newHead = {
         x: snakeX,
