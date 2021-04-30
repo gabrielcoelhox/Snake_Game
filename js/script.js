@@ -15,6 +15,13 @@ snake[0] = { // Posição
 // Variável responsável pela direção
 let direction = "right";
 
+// Math.floor remove a parte flutuante do jogo
+// Math.random faz com que a comida apareça em locais randômicos
+let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
+
 function criarBG() {
     // Definir a cor do background (Mapa do jogo)
     context.fillStyle = "lightgreen";
@@ -27,6 +34,13 @@ function criarCobrinha(){
         context.fillStyle = "black"; // Cor da cobrinha
         context.fillRect(snake[i].x, snake[i].y, box-2, box-2); // Tamanho
     }
+}
+
+function drawFood(){
+    // Cor da comida
+    context.fillStyle = "red";
+    // Posições (coordenadas) quando o fillRect for desenhar
+    context.fillRect(food.x, food.y, box, box)
 }
 
 // Evento de clique para quando apertar os botões do teclado chamar a função update
@@ -53,6 +67,7 @@ function iniciarJogo() {
     // Carregar as funções
     criarBG();
     criarCobrinha();
+    drawFood();
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
