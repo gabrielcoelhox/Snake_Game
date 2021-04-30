@@ -29,5 +29,33 @@ function criarCobrinha(){
     }
 }
 
-criarBG();
-criarCobrinha();
+// Função para iniciar o jogo
+function iniciarJogo() {
+
+    // Carregar as funções
+    criarBG();
+    criarCobrinha();
+
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+
+    if(direction == "right") snakeX += box; // Se a cobrinha for para a direita, adiciona um quadrado
+    if(direction == "left") snakeX -= box; // Se for para a esquerda, diminui um quadrado
+    if(direction == "up") snakeY -= box;
+    if(direction == "down") snakeY += box;
+
+    // Retira o último elemento (quadrado) da cobrinha
+    snake.pop();
+
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    }
+
+    // Acrescenta um elemento sempre a frente da cobrinha
+    snake.unshift(newHead);
+
+
+}
+
+let jogo = setInterval(iniciarJogo, 100); // Intervalo para o jogo ficar reiniciando caso ele trave
