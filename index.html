@@ -8,8 +8,17 @@
 </head>
 <body>
     <h1>Snake Game!</h1>
+    <div class="regras">
+        <p>O jogador deve mover a cobra em direção à sua comida utilizando as teclas para CIMA, para BAIXO, ESQUERDA e DIREITA.</p>
+        <p>Quando a cabeça da cobra atinge a comida, a cobra aumenta de tamanho (1 quadrado), a comida aparecerá numa nova posição (escolhida aleatoriamente).</p>
+    </div>
 
     <canvas id="snake" width="512" height="512"></canvas>
+
+    <div>
+        <button class="botao" type="button" onclick="novoJogo()">NOVO JOGO</button>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

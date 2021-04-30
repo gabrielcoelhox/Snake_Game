@@ -1,4 +1,4 @@
-body{
+body {
     height: 95vh;
     width: 95;
     display: flex;
@@ -7,4 +7,33 @@ body{
     flex-direction: column;
     color: #141414;
     font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-shadow: 0px 1px 1px lightgreen;
+    margin: 5px;
+}
+
+.regras {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.botao {
+    background-color: #E50914;
+    border: 2px solid black;
+    box-shadow: 1px 3px 4px rgb(112, 110, 110);
+    color:white;
+    font-size: 20px;
+    border-radius: 9px;
+    padding: 4px;
+    margin-top: 12px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botao:hover {
+    background-color: #eb656c;
+    cursor: pointer;
+    border-radius: 9px;
 }

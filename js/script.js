@@ -54,6 +54,12 @@ function update (event){
     if(event.keyCode == 40 && direction != "up") direction = "down";
 }
 
+// Função que inicia um novo jogo
+function novoJogo(){
+    clearInterval(jogo);
+    document.location.reload(true);
+}
+
 // Função para iniciar o jogo
 function iniciarJogo() {
 
