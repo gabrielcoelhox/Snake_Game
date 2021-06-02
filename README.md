@@ -1,4 +1,4 @@
-💻 Atualizado em 03 de Maio de 2021 💻
+💻 Atualizado em 02 de Junho de 2021 💻
 
 # Projeto Digital Innovation One
 
@@ -19,6 +19,10 @@ Já pensou em criar seu próprio jogo do zero? Aprenda a desenvolver de forma si
 ## Melhorias futuras
 
 - Implementar contador de pontos.
+
+## Confira
+
+https://gabrielcoelhox.github.io/Snake_Game/
 
 ## 📷 Veja 📷
 
